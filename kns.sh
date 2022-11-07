@@ -11,6 +11,6 @@ then
         echo "$K8S_DEFAULT_NS"
     fi
 else
-    kubectl get namespace | awk '{print $1}' | tail -n +2 | fzf --filter $1 || head -1
+    kubectl get namespace | awk '{print $1}' | tail -n +2 | fzf --filter $1 | head -1
 fi
 
