@@ -28,9 +28,19 @@ then
     NAMESPACE=$(./kns.sh $NAMESPACE_KEYWORD)
 fi
 
+if [[ $? -ne 0 ]]
+then
+    exit 1 # Namespace not found
+fi
+
 if [[ -z "$POD" ]]
 then
     POD=$(./kpod.sh -n $NAMESPACE $POD_KEYWORD)
+fi
+
+if [[ $? -ne 0 ]]
+then
+    exit 1 # Pod not found
 fi
 
 CONTAINER_KEYWORD=${!OPTIND}
@@ -40,6 +50,9 @@ then
     kubectl get pods $POD -n $NAMESPACE -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}' \
         | fzf --height=40% --border --reverse --header="Select container:"
 else
-    kubectl get pods $POD -n $NAMESPACE -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}' \
-        | fzf --filter $CONTAINER_KEYWORD | head -1
+    FOUND_CONTAINERS=$(kubectl get pods $POD -n $NAMESPACE -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}' \
+        | fzf --filter $CONTAINER_KEYWORD) || exit 1
+
+    CONTAINERS=($FOUND_CONTAINERS)
+    echo ${CONTAINERS[0]}
 fi

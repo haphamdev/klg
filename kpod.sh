@@ -36,7 +36,16 @@ then
     NAMESPACE="$(./kns.sh $NAMESPACE_KEYWORD)"
 fi
 
+log "Found namespace: $NAMESPACE"
+
+if [[ $? -ne 0 ]]
+then
+    exit 1
+fi
+
 POD_KEYWORD=${!OPTIND}
+
+log "looking for pod: $POD_KEYWORD"
 
 if [ -z "$POD_KEYWORD" ]
 then
@@ -45,5 +54,7 @@ then
         | tail -n +2 | fzf --height=40% --border --reverse --header="Select pod:"
 else
     log "Pod keyword: '$POD_KEYWORD'"
-    kubectl get pods -n $NAMESPACE | awk '{print $1}' | tail -n +2 | fzf --filter $POD_KEYWORD | head -1
+    FOUND_PODS=$(kubectl get pods -n $NAMESPACE | awk '{print $1}' | tail -n +2 | fzf --filter $POD_KEYWORD) || exit 1
+    PODS=($FOUND_PODS)
+    echo ${PODS[0]}
 fi
