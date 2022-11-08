@@ -10,7 +10,9 @@ This project is still under development. Hopefully, I can finish it within this 
 This tool depends on `lnav` and `kubectl`. Please make sure that you installed [lnav](https://lnav.org/) and your `kubectl` works.
 
 # IT WORKS FOR NOW
-You can try it by running the file `./klg.sh`
+You can try it by running the file `./klg.sh`.
+Notice: Still not using `lnav` to show the logs yet. Coming soon. But you can fuzzy search the namespace/pod/container now.
+
 Usage:
 ```
 ./klg.sh [options]
@@ -23,6 +25,8 @@ Available option:
 
 Example:
 ```
+./klg.sh
+
 ./klg.sh -n my-namespace -p my-pod -c my-container
 ```
 
