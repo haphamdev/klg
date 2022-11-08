@@ -12,7 +12,10 @@ This project is still under development. Hopefully, I can finish it soon
 
 # DEPENDENCIES
 
-This tool depends on `lnav` and `kubectl`. Please make sure that you installed [lnav](https://lnav.org/) and your `kubectl` works.
+This tool depends on `lnav` and `kubectl`. 
+- Please make sure that you installed [lnav](https://lnav.org/) 
+- Your `kubectl` must work
+- Please install [fzf](https://github.com/junegunn/fzf) for fuzzy search
 
 # IT WORKS FOR NOW
 You can try it by running the file `./klg.sh`.
