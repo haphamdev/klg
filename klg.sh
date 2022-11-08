@@ -66,6 +66,8 @@ fi
 
 log "Found container: $CONTAINER"
 
+mkdir -p "/tmp/klg"
+
 LOG_FILE="/tmp/klg/$POD.log"
 
 log "Pod log is stored at $LOG_FILE"
