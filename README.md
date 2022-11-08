@@ -27,9 +27,12 @@ Usage:
 ```
 
 Available option:
-- `-n`: Keyword to fuzzy search for k8s namespace
-- `-p`: Keyword to fuzzy search for k8s pod
-- `-c`: Keyword to fuzzy search for container
+- `-n`: Keyword to fuzzy search for k8s namespace. Ignored when `-N` is specified.
+- `-p`: Keyword to fuzzy search for k8s pod. Ignored when `-P` is specified.
+- `-c`: Keyword to fuzzy search for container. Ignored when `-C` is specified.
+- `-N`: Exact namespace (no searching)
+- `-P`: Exact pod name (no searching)
+- `-C`: Exact container name (no searching)
 
 Example:
 ```
