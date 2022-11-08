@@ -5,8 +5,7 @@ if [ -z "$1" ]
 then
     if [ -z "$K8S_DEFAULT_NS" ]
     then
-        kubectl get namespace | awk '{print $1}' \
-        | tail -n +2 | fzf --height=40% --border --reverse --header="Select namespace:"
+        echo "default"
     else
         echo "$K8S_DEFAULT_NS"
     fi

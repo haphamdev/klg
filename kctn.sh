@@ -48,10 +48,10 @@ CONTAINER_KEYWORD=${!OPTIND}
 if [ -z "$CONTAINER_KEYWORD" ]
 then
     kubectl get pods $POD -n $NAMESPACE -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}' \
-        | fzf --height=40% --border --reverse --header="Select container:"
+        | awk NF | fzf --height=40% --border --reverse -1 --header="Select container:"
 else
     FOUND_CONTAINERS=$(kubectl get pods $POD -n $NAMESPACE -o jsonpath='{range .spec.containers[*]}{.name}{"\n"}' \
-        | fzf --filter $CONTAINER_KEYWORD) || exit 1
+        | awk NF | fzf --filter $CONTAINER_KEYWORD) || exit 1
 
     CONTAINERS=($FOUND_CONTAINERS)
     echo ${CONTAINERS[0]}
