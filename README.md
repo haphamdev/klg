@@ -1,9 +1,14 @@
 # klg
 Viewing logs of Kubernetes pods using [lnav](https://lnav.org/).
 This is written in bash script.
+### Why this?
+- I am sick of copying long auto-generated pod name before pasting into `kubectl logs` command. K9s can help here.
+- My eyes hurt when looking at the wall of log text in the terminal
+- I want to filter/search the logs in a professional log viewer
+- I want to play with shell script
 
 # WORK IN PROGRESS
-This project is still under development. Hopefully, I can finish it within this week (or maybe two weeks)
+This project is still under development. Hopefully, I can finish it soon
 
 # DEPENDENCIES
 
