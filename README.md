@@ -41,9 +41,9 @@ Example:
 # GOALS
 Finish following features:
 - [x] Fuzzy search for k8s namespace/pod/container
-- [ ] Viewing logs in lnav
-- [ ] Using default namespace `default` or `$K8S_DEFAULT_NS`
-- [ ] Handle error cases and return error code (e.g. pod not found, namespace not found)
+- [x] Viewing logs in lnav
+- [x] Using default namespace `default` or `$K8S_DEFAULT_NS`
+- [x] Handle error cases and return error code (e.g. pod not found, namespace not found)
 
 
 # ALTERNATIVE FOR FISH SHELL
