@@ -1,0 +1,20 @@
+Viewing logs of Kubernetes pod using lnav
+The missing option will be interactively entered with fuzzy search.
+
+Usage:
+    ./klg.sh [options]
+
+Options:
+    -h : Show help
+    -n: Keyword to fuzzy search for k8s namespace. Ignored when -N is specified.
+    -p: Keyword to fuzzy search for k8s pod. Ignored when -P is specified.
+    -c: Keyword to fuzzy search for container. Ignored when -C is specified.
+    -N: Exact namespace (no searching)
+    -P: Exact pod name (no searching)
+    -C: Exact container name (no searching)
+
+Example:
+    ./klg.sh
+    ./klg.sh -n my-nsp
+    ./klg.sh -n my-namespace -p my-pod -c my-container
+    K8S_DEFAULT_NS=default ./klg.sh -p mypd -c myctn

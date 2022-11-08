@@ -37,16 +37,18 @@ Available option:
 Example:
 ```
 ./klg.sh
-
+./klg.sh -n my-nsp
 ./klg.sh -n my-namespace -p my-pod -c my-container
+K8S_DEFAULT_NS=default ./klg.sh -p mypd -c myctn
 ```
 
 # GOALS
 Finish following features:
 - [x] Fuzzy search for k8s namespace/pod/container
 - [x] Viewing logs in lnav
-- [x] Using default namespace `default` or `$K8S_DEFAULT_NS`
+- [ ] Using default namespace `default` or `$K8S_DEFAULT_NS`
 - [x] Handle error cases and return error code (e.g. pod not found, namespace not found)
+- [ ] Auto-select the only container in pod
 
 
 # ALTERNATIVE FOR FISH SHELL

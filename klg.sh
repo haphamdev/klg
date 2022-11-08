@@ -4,7 +4,7 @@ function log () {
     echo "$1" >> /tmp/klg.log
 }
 
-while getopts "n:p:c:N:P:C:" opt; do
+while getopts "n:p:c:N:P:C:h" opt; do
     case "${opt}" in
         n)
             NAMESPACE_KEYWORD=$OPTARG
@@ -23,6 +23,10 @@ while getopts "n:p:c:N:P:C:" opt; do
             ;;
         C)
             CONTAINER=$OPTARG
+            ;;
+        h)
+            cat ./help.txt
+            exit
             ;;
     esac
 done
