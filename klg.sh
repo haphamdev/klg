@@ -55,7 +55,6 @@ log "Found pod: $POD"
 
 if [[ -z "$CONTAINER" ]]
 then
-    log "Container keyword is: $CONTAINER_KEYWORD"
     CONTAINER=$(./kctn.sh -N $NAMESPACE -P $POD $CONTAINER_KEYWORD)
 fi
 
@@ -67,4 +66,19 @@ fi
 
 log "Found container: $CONTAINER"
 
-kubectl logs pods/$POD -n $NAMESPACE -c $CONTAINER
+LOG_FILE="/tmp/klg/$POD.log"
+
+log "Pod log is stored at $LOG_FILE"
+kubectl logs -f pods/$POD -n $NAMESPACE -c $CONTAINER > $LOG_FILE &
+
+PID=$(jobs -lp)
+log "Reading pod logs in background process $PID"
+
+lnav $LOG_FILE
+
+log "Killing background process $PID"
+kill -s INT $PID
+
+log "Removing temporary log file $LOG_FILE"
+rm $LOG_FILE
+
