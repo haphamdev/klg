@@ -21,6 +21,13 @@ This tool depends on `fzf`, `lnav` and `kubectl`.
 
 # HOW TO USE
 
+Add this to your `.bashrc` or `.zshrc`
+```
+function klg () {
+    <Path-to-your-cloned-repo>/klg/klg.sh $@
+}
+```
+
 Usage:
 ```
 ./klg.sh [options]
