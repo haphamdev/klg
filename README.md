@@ -30,7 +30,7 @@ function klg () {
 
 Usage:
 ```
-./klg.sh [options]
+klg [options]
 ```
 
 Available option:
@@ -43,10 +43,10 @@ Available option:
 
 Example:
 ```
-./klg.sh
-./klg.sh -n my-nsp
-./klg.sh -n my-namespace -p my-pod -c my-container
-K8S_DEFAULT_NS=default ./klg.sh -p mypd -c myctn
+klg
+klg -n my-nsp
+klg -n my-namespace -p my-pod -c my-container
+K8S_DEFAULT_NS=my-default-ns klg -p mypd -c myctn
 ```
 
 # GOALS
