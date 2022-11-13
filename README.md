@@ -8,9 +8,7 @@ This is written in bash script.
 - I want to play with shell script
 
 # DEMO
-
-https://user-images.githubusercontent.com/6322508/200557797-497d9291-2e8d-4bbb-9cb9-9d8f193771ba.mp4
-
+![klg](https://user-images.githubusercontent.com/6322508/201508336-6f66f56d-c54e-4009-b3ed-0b9f385978ad.gif)
 
 # DEPENDENCIES
 
