@@ -1,6 +1,7 @@
 # klg
 Viewing logs of Kubernetes pods using [lnav](https://lnav.org/).
 This is written in bash script.
+
 ### Why this?
 - I am sick of copying long auto-generated pod name before pasting into `kubectl logs` command. K9s can help here.
 - My eyes hurt when looking at the wall of log text in the terminal
@@ -19,6 +20,10 @@ This tool depends on `fzf`, `lnav` and `kubectl`.
 
 # HOW TO USE
 
+## View pod logs with `klg`
+
+View logs of your pod/container using `lnav`
+
 Add this to your `.bashrc` or `.zshrc`
 ```
 function klg () {
@@ -26,9 +31,21 @@ function klg () {
 }
 ```
 
-Usage:
+## Run shell command with `ksh`
+
+Start `/bin/sh` inside your pod and let you run any shell command as you want.
+
+Add this to your `.bashrc` or `.zshrc`
+```
+function ksh () {
+    <Path-to-your-cloned-repo>/klg/ksh.sh $@
+}
+```
+
+## Usage
 ```
 klg [options]
+ksh [options]
 ```
 
 Available option:
@@ -45,7 +62,9 @@ klg
 klg -n my-nsp
 klg -n my-namespace -p my-pod -c my-container
 K8S_DEFAULT_NS=my-default-ns klg -p mypd -c myctn
+ksh -p my-pod
 ```
+
 
 # GOALS
 Finish following features:
