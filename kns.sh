@@ -10,8 +10,7 @@ then
         echo "$K8S_DEFAULT_NS"
     fi
 else
-    FOUND_NAMESPACES=$(kubectl get namespace | awk '{print $1}' | tail -n +2 | fzf --filter $1) || exit 1
+    FOUND_NAMESPACES=$(kubectl get namespace | awk '{print $1}' | tail -n +2 | fzf --filter "$1") || exit 1
     NAMESPACES=($FOUND_NAMESPACES)
-    echo ${NAMESPACES[0]}
+    echo "${NAMESPACES[0]}"
 fi
-
