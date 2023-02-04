@@ -27,7 +27,7 @@ while getopts "n:p:c:N:P:C:h" opt; do
             CONTAINER=$OPTARG
             ;;
         h)
-            cat ./help.txt
+            cat "$SCRIPT_PATH/help.txt"
             exit
             ;;
     esac
