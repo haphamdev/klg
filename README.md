@@ -42,10 +42,22 @@ function ksh () {
 }
 ```
 
+## Execute a shell command inside your pod with `ke`
+
+Execute a shell command inside a k8s pod
+
+Add this to your `.bashrc` or `.zshrc`
+```
+function ke () {
+    <Path-to-your-cloned-repo>/klg/ke.sh $@
+}
+```
+
 ## Usage
 ```
 klg [options]
 ksh [options]
+ke [options]
 ```
 
 Available option:
@@ -63,6 +75,9 @@ klg -n my-nsp
 klg -n my-namespace -p my-pod -c my-container
 K8S_DEFAULT_NS=my-default-ns klg -p mypd -c myctn
 ksh -p my-pod
+ksh -n my-nsp -p my-pod -c my-container
+ke -n my-nsp -p my-pod -- my-command the arg list
+
 ```
 
 
