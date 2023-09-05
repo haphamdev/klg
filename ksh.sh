@@ -4,7 +4,7 @@ SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 #
 function log () {
-    echo "$1" >> /tmp/ksh.log
+    echo "$1" # >> /tmp/ksh.log
 }
 
 while getopts "n:p:c:N:P:C:h" opt; do

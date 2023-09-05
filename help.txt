@@ -1,8 +1,11 @@
-Viewing logs of Kubernetes pod using lnav
+Interacting with a K8s pod (showing logs, executing a command, or starting a shell session)
 The missing option will be interactively entered with fuzzy search.
 
 Usage:
-    ./klg.sh [options]
+    ./klg.sh [options]      Getting logs of a k8s pod
+    ./ke.sh [options]       Execute a command inside a k8s pod
+    ./ksh.sh [options]      Running shell of a k8s pod
+
 
 Options:
     -h : Show help
@@ -18,3 +21,5 @@ Example:
     ./klg.sh -n my-nsp
     ./klg.sh -n my-namespace -p my-pod -c my-container
     K8S_DEFAULT_NS=default ./klg.sh -p mypd -c myctn
+    ./ksh.sh -n my-nsp -p my-pod -c my-container
+    ./ke.sh -n my-nsp -p my-pod -- my-command the arg list

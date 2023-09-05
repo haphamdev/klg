@@ -73,6 +73,8 @@ then
 fi
 
 log "Found container: $CONTAINER"
+log "Executing: $COMMAND"
+echo
 
 EXEC_CMD="kubectl exec -it pods/$POD -n $NAMESPACE -c $CONTAINER -- $COMMAND"
 eval $EXEC_CMD
