@@ -68,6 +68,10 @@ Available option:
 - `-P`: Exact pod name (no searching)
 - `-C`: Exact container name (no searching)
 
+If namespace options are not provided, `$K8S_DEFAULT_NS` will be used, by default, it is `default`.
+If pod options are not provided, the user will be asked to select pod on a fuzzy search popup.
+If container options are not provided for multi-container pods, the user will be asked to select container on a fuzzy search popup.
+
 Example:
 ```
 klg
