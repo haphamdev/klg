@@ -1,0 +1,170 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "plg_service_logs": {
+        "title": "PLG Service logs",
+        "description": "Log format of the microservices of PLG team",
+        "url": "personio.de",
+        "json": true,
+        "ordered-by-time": false,
+        "timestamp-field": "ts",
+        "level-field": "level",
+        "body-field": "msg",
+        "line-format": [
+            {
+                "field": "__timestamp__"
+            },
+            " ",
+            {
+                "field": "__level__",
+                "text-transform": "uppercase",
+                "min-width": 7,
+                "align": "left"
+            },
+            " ",
+            {
+                "field": "msg"
+            }
+        ],
+        "value": {
+            "type": {
+                "kind": "string",
+                "hidden": true
+            },
+            "company_id": {
+                "kind": "integer",
+                "hidden": true
+            },
+            "service_name": {
+                "kind": "string",
+                "hidden": true
+            },
+            "hash": {
+                "kind": "string",
+                "hidden": true
+            },
+            "dd.trace_id": {
+                "kind": "string",
+                "hidden": true
+            },
+            "dd.service": {
+                "kind": "string",
+                "hidden": true
+            },
+            "dd.version": {
+                "kind": "string",
+                "hidden": true
+            },
+            "dd.span_id": {
+                "kind": "string",
+                "hidden": true
+            },
+            "app": {
+                "kind": "string",
+                "hidden": true
+            },
+            "logger": {
+                "kind": "string",
+                "hidden": true
+            },
+            "class": {
+                "kind": "string",
+                "hidden": true
+            },
+            "method": {
+                "kind": "string",
+                "hidden": true
+            },
+            "file": {
+                "kind": "string",
+                "hidden": true
+            },
+            "line": {
+                "kind": "integer",
+                "hidden": true
+            },
+            "thread": {
+                "kind": "string",
+                "hidden": true
+            },
+            "msg": {
+                "kind": "string"
+            },
+            "event": {
+                "kind": "string",
+                "hidden": true
+            },
+            "ctxt_event_context.event": {
+                "kind": "string",
+                "hidden": true
+            },
+            "ctxt_event_context.model_type": {
+                "kind": "string",
+                "hidden": true
+            },
+            "ctxt_event_context.model_state": {
+                "kind": "string",
+                "hidden": true
+            },
+            "channel": {
+                "kind": "string",
+                "hidden": true
+            },
+            "personioTraceId": {
+                "kind": "string",
+                "hidden": true
+            },
+            "authn_usage_mode": {
+                "kind": "string",
+                "hidden": true
+            },
+            "Kotlin-Authentication-Client-Version": {
+                "kind": "string",
+                "hidden": true
+            },
+            "module": {
+                "kind": "string",
+                "hidden": true
+            },
+            "stack": {
+                "kind": "string",
+                "hidden": true
+            },
+            "authn_importing_class": {
+                "kind": "string",
+                "hidden": true
+            },
+            "ctxt_identifier": {
+                "kind": "string",
+                "hidden": true
+            },
+            "@timestamp": {
+                "kind": "string",
+                "hidden": true
+            },
+            "hostname": {
+                "kind": "string",
+                "hidden": true
+            },
+            "impersonating_id": {
+                "kind": "string",
+                "hidden": true
+            },
+            "ip_address": {
+                "kind": "string",
+                "hidden": true
+            },
+            "route": {
+                "kind": "string",
+                "hidden": true
+            },
+            "user_company_id": {
+                "kind": "integer",
+                "hidden": true
+            },
+            "user_id": {
+                "kind": "string",
+                "hidden": true
+            }
+        }
+    }
+}
